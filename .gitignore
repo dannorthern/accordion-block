@@ -1,0 +1,53 @@
+# Dependencies
+/vendor
+/wordpress
+/app
+/wp
+node_modules
+bower_components
+vendor
+
+# Build and Compilation
+.sass-cache
+dist
+backstop_data
+_srcMaps/
+
+# htaccess
+.htaccess
+
+# Logs and Backups
+*.log
+*.sql
+*.sql.gz
+db_backup.*
+/imagify-backup
+
+# Editor and IDE Files
+*.esproj
+*.tmproj
+*.tmproject
+tmtags
+.*.sw[a-z]
+*.un~
+Session.vim
+*.swp
+.vscode
+*.code-workspace
+
+# OS Generated Files
+## Mac
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+## Windows
+Thumbs.db
+Desktop.ini
+
+# Miscellaneous
+.ftppass
+sftpCache.json
+bin/tasks
+debug.log

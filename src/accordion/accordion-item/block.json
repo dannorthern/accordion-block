@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "builtnorth/accordion-item",
+    "version": "0.1.0",
+    "title": "Accordion Item",
+    "category": "text",
+    "description": "Collapsable item with title and content.",
+    "example": {},
+    "supports": {
+		"color": {
+			"background": true,
+			"text": true,
+			"link": true
+		},
+		"typography": {
+			"fontSizes": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+        "interactivity": true,
+        "html": false
+    },
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Tabs Headline Right Here"
+		},
+		"defaultState": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+    "textdomain": "interactive-tabs-experiment",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php",
+    "viewScriptModule": "file:./view.js"
+}
