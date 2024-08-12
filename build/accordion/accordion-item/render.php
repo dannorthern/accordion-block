@@ -23,7 +23,9 @@ $default_state = isset($attributes['defaultState']) ? $attributes['defaultState'
 		data-wp-on--click="actions.toggle"
 		data-wp-bind--aria-expanded="context.isActive"
 		aria-controls="<?php echo esc_attr($unique_id); ?>">
-		<?php echo $title; ?>
+		<span class="accordion__title--text">
+			<?php echo $title; ?>
+		</span>
 		<span class="accordion__toggle" aria-label="Toggle icon"></span>
 	</button>
 

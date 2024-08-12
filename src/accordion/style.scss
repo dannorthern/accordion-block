@@ -1,119 +1,118 @@
 .accordion {
-    // Styles for the main accordion container
+	
+	&__title {
+		// Button reset
+		background: none;
+		color: inherit;
+		border: none;
+		font: inherit;
+		cursor: pointer;
+		outline: inherit;
 
-    &__item {
-        // Styles for each accordion item
+		// Additional styles for the title
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		width: 100%;
+		text-align: left;
 
-        &.is-active {
-            // Styles for the active accordion item
-        }
-    }
+		&--text {
+			padding-right: 2.25rem;
+		}
+	}
 
-    &__title {
-        // Button reset
-        background: none;
-        color: inherit;
-        border: none;
-        padding-right: 2.25rem;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
+	// Shared styles for toggle pseudo-elements
+	%toggle-pseudo {
+		content: '';
+		position: absolute;
+		transition: all 0.3s ease;
+	}
 
-        // Additional styles for the title
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        text-align: left;
-    }
+	&__toggle {
+		width: 1.5rem;
+		height: 1.5rem;
+		position: relative;
+		transition: transform 0.3s ease;
 
-    &__toggle {
-        width: 1.5rem;
-        height: 1.5rem;
-        position: relative;
-        transition: transform 0.3s ease;
-    }
+		&::before {
+			@extend %toggle-pseudo;
+			top: 50%;
+			left: 50%;
+			width: 0.625rem;
+			height: 0.625rem;
+			border-right: 2px solid currentColor;
+			border-bottom: 2px solid currentColor;
+			transform: translate(-50%, -75%) rotate(45deg);
+		}
 
-    &__content {
-        // Styles for the content
-        display: none;
+	}
 
-        .is-active & {
-            display: block;
-        }
-    }
 
-    // Shared styles for toggle pseudo-elements
-    %toggle-pseudo {
-        content: '';
-        position: absolute;
-        transition: all 0.3s ease;
-    }
 
-    // Styles for default toggle (chevron down)
-    &.is-style-default {
-        .accordion__toggle::before {
-            @extend %toggle-pseudo;
-            top: 50%;
-            left: 50%;
-            width: 0.625rem;
-            height: 0.625rem;
-            border-right: 2px solid currentColor;
-            border-bottom: 2px solid currentColor;
-            transform: translate(-50%, -75%) rotate(45deg);
-        }
+	&__content {
+		height: 0;
+		overflow: hidden;
+		transition: height 0.25s ease;
+	}
 
-        .is-active .accordion__toggle::before {
-            transform: translate(-50%, -25%) rotate(-135deg);
-        }
-    }
+	&__item.is-active {
+		.accordion__content {
+			height: auto;
+		}
 
-    // Styles for the plus-minus toggle
-    &.is-style-plus-minus {
-        .accordion__toggle {
-            &::before,
-            &::after {
-                @extend %toggle-pseudo;
-                background-color: currentColor;
-                top: 50%;
-                left: 50%;
-            }
+		.accordion__toggle::before {
+			transform: translate(-50%, -25%) rotate(-135deg);
+		}
+	}
 
-            &::before {
-                width: 0.9375rem;
-                height: 0.125rem;
-                transform: translate(-50%, -50%);
-            }
+	/* Block Styles
+	*******************************************************/
 
-            &::after {
-                width: 0.125rem;
-                height: 0.9375rem;
-                transform: translate(-50%, -50%);
-            }
-        }
+	// Styles for the plus-minus toggle
+	&.is-style-plus-minus {
+		.accordion__toggle {
+			&::before,
+			&::after {
+				@extend %toggle-pseudo;
+				background-color: currentColor;
+				top: 50%;
+				left: 50%;
+			}
 
-        .is-active .accordion__toggle {
-            &::after {
-                transform: translate(-50%, -50%) rotate(90deg);
-            }
-        }
-    }
-    
-    // Styles for the chevron right toggle
-    &.is-style-chevron-right {
-        .accordion__toggle::before {
-            @extend %toggle-pseudo;
-            top: 50%;
-            left: 50%;
-            width: 0.625rem;
-            height: 0.625rem;
-            border-right: 2px solid currentColor;
-            border-bottom: 2px solid currentColor;
-            transform: translate(-75%, -50%) rotate(-45deg);
-        }
+			&::before {
+				width: 0.9375rem;
+				height: 0.125rem;
+				transform: translate(-50%, -50%);
+				border-bottom: none;
+			}
 
-        .is-active .accordion__toggle::before {
-            transform: translate(-25%, -50%) rotate(-135deg);
-        }
-    }
+			&::after {
+				width: 0.125rem;
+				height: 0.9375rem;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		.accordion__item.is-active .accordion__toggle::after {
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+	}
+	
+	// Styles for the chevron right toggle
+	&.is-style-chevron-right {
+		.accordion__toggle::before {
+			@extend %toggle-pseudo;
+			top: 50%;
+			left: 50%;
+			width: 0.625rem;
+			height: 0.625rem;
+			border-right: 2px solid currentColor;
+			border-bottom: 2px solid currentColor;
+			transform: translate(-75%, -50%) rotate(-45deg);
+		}
+
+		.accordion__item.is-active .accordion__toggle::before {
+			transform: translate(-25%, -50%) rotate(-135deg);
+		}
+	}
 }

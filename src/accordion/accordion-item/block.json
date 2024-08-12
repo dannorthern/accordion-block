@@ -5,21 +5,28 @@
     "version": "0.1.0",
     "title": "Accordion Item",
     "category": "text",
+	"parent": ["builtnorth/accordion"],
     "description": "Collapsable item with title and content.",
     "example": {},
     "supports": {
-		"color": {
-			"background": true,
-			"text": true,
-			"link": true
-		},
-		"typography": {
-			"fontSizes": true
-		},
-		"spacing": {
-			"padding": true,
-			"margin": true
-		},
+		 "color": {
+            "background": true,
+            "text": true,
+            "link": true
+        },
+        "typography": {
+            "fontSize": true
+        },
+        "spacing": {
+            "padding": true,
+            "margin": ["top", "bottom"]
+        },
+        "__experimentalBorder": {
+            "color": true,
+            "radius": true,
+            "width": true
+        },
+		"shadow": true,
         "interactivity": true,
         "html": false
     },
@@ -33,6 +40,10 @@
 			"default": false
 		}
 	},
+	 "selectors": {
+        "root": ".accordion__item",
+        "typography": ".accordion__title"
+    },
     "textdomain": "interactive-tabs-experiment",
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",

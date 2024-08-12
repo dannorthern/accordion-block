@@ -193,7 +193,7 @@ module.exports = window["wp"]["blocks"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"builtnorth/accordion","version":"0.1.0","title":"Accordion","category":"text","description":"Displays content in a collapsible accordion. Holds multiple accordion items.","example":{},"supports":{"html":false},"styles":[{"name":"default","label":"Default","isDefault":true},{"name":"chevron-right","label":"Chevron Right"},{"name":"plus-minus","label":"Plus/Minus"}],"textdomain":"accordion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"builtnorth/accordion","version":"0.1.0","title":"Accordion","category":"text","description":"Displays content in a collapsible accordion. Holds multiple accordion items.","example":{},"supports":{"html":false},"styles":[{"name":"default","label":"Default","isDefault":true},{"name":"chevron-right","label":"Chevron Right"},{"name":"plus-minus","label":"Plus/Minus"}],"textdomain":"accordion","editorScript":"file:./index.js","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 

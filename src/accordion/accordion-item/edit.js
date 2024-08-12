@@ -10,7 +10,10 @@ function Edit(props) {
         clientId,
     } = props;
 
-    const blockProps = useBlockProps();
+    const blockProps = useBlockProps({
+        className: `accordion__item`,
+	});
+
     const [isActive, setIsActive] = useState(defaultState);
 
     useEffect(() => {
@@ -22,7 +25,9 @@ function Edit(props) {
         setIsActive(value);
     };
 
-    const toggleAccordion = () => {
+    const toggleAccordion = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         setIsActive(!isActive);
     };
 
@@ -39,21 +44,22 @@ function Edit(props) {
             </InspectorControls>
             <div 
                 {...blockProps} 
-                className={`${blockProps.className} accordion__item ${isActive ? 'is-open' : ''}`}
+                className={`${blockProps.className} ${isActive ? 'is-active' : ''}`}
             >
                 <div className="accordion__title">
-                    <RichText
-                        value={title}
-                        onChange={(value) => setAttributes({ title: value })}
-                        placeholder={__('Tab title', 'builtnorth-accordion-block')}
-                    />
+					<span className="accordion__title-text">
+						<RichText
+							value={title}
+							onChange={(value) => setAttributes({ title: value })}
+							placeholder={__('Accordion title', 'builtnorth-accordion-block')}
+						/>
+					</span>
                     <span
                         className="accordion__toggle"
                         onClick={toggleAccordion}
                         aria-expanded={isActive}
                         aria-controls={`accordion-content-${clientId}`}
-                    >
-                    </span>
+                    ></span>
                 </div>
 
                 <div

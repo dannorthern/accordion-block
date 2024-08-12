@@ -36,7 +36,9 @@ function Edit(props) {
     setAttributes,
     clientId
   } = props;
-  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
+    className: `accordion__item`
+  });
   const [isActive, setIsActive] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(defaultState);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
     setIsActive(defaultState);
@@ -47,7 +49,9 @@ function Edit(props) {
     });
     setIsActive(value);
   };
-  const toggleAccordion = () => {
+  const toggleAccordion = event => {
+    event.preventDefault();
+    event.stopPropagation();
     setIsActive(!isActive);
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
@@ -58,16 +62,18 @@ function Edit(props) {
     onChange: setDefaultState
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps,
-    className: `${blockProps.className} accordion__item ${isActive ? 'is-open' : ''}`
+    className: `${blockProps.className} ${isActive ? 'is-active' : ''}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "accordion__title"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "accordion__title-text"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     value: title,
     onChange: value => setAttributes({
       title: value
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Tab title', 'builtnorth-accordion-block')
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Accordion title', 'builtnorth-accordion-block')
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "accordion__toggle",
     onClick: toggleAccordion,
     "aria-expanded": isActive,
@@ -208,7 +214,7 @@ module.exports = window["wp"]["i18n"];
   \*************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"builtnorth/accordion-item","version":"0.1.0","title":"Accordion Item","category":"text","description":"Collapsable item with title and content.","example":{},"supports":{"color":{"background":true,"text":true,"link":true},"typography":{"fontSizes":true},"spacing":{"padding":true,"margin":true},"interactivity":true,"html":false},"attributes":{"title":{"type":"string","default":"Tabs Headline Right Here"},"defaultState":{"type":"boolean","default":false}},"textdomain":"interactive-tabs-experiment","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScriptModule":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"builtnorth/accordion-item","version":"0.1.0","title":"Accordion Item","category":"text","parent":["builtnorth/accordion"],"description":"Collapsable item with title and content.","example":{},"supports":{"color":{"background":true,"text":true,"link":true},"typography":{"fontSize":true},"spacing":{"padding":true,"margin":["top","bottom"]},"__experimentalBorder":{"color":true,"radius":true,"width":true},"shadow":true,"interactivity":true,"html":false},"attributes":{"title":{"type":"string","default":"Tabs Headline Right Here"},"defaultState":{"type":"boolean","default":false}},"selectors":{"root":".accordion__item","typography":".accordion__title"},"textdomain":"interactive-tabs-experiment","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScriptModule":"file:./view.js"}');
 
 /***/ })
 
