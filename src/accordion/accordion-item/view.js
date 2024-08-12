@@ -1,6 +1,6 @@
 import { getContext, store } from '@wordpress/interactivity';
 
-store('interactive-tabs-experiment', {
+store('builtnorth-accordion-block', {
     actions: {
         toggle: () => {
             const context = getContext();

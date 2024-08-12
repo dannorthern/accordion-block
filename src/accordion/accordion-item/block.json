@@ -44,7 +44,7 @@
         "root": ".accordion__item",
         "typography": ".accordion__title"
     },
-    "textdomain": "interactive-tabs-experiment",
+    "textdomain": "builtnorth-accordion-block",
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",
     "style": "file:./style-index.css",

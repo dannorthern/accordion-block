@@ -10,6 +10,9 @@
   outline-style: solid;
   outline-color: inherit;
 }
+.accordion__item:hover .accordion__title {
+  text-decoration: underline;
+}
 .accordion__title {
   background: none;
   color: inherit;

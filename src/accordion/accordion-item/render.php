@@ -3,7 +3,7 @@
 $unique_id = wp_unique_id('item-');
 $wrapper_attributes = get_block_wrapper_attributes([
 	'class' => 'accordion__item',
-	'data-wp-interactive' => 'interactive-tabs-experiment',
+	'data-wp-interactive' => 'builtnorth-accordion-block',
 	'data-wp-watch' => 'callbacks.logIsActive',
 	'data-wp-class--is-active' => 'context.isActive',
 ]);
@@ -33,6 +33,6 @@ $default_state = isset($attributes['defaultState']) ? $attributes['defaultState'
 		class="accordion__content"
 		id="<?php echo esc_attr($unique_id); ?>"
 		data-wp-bind--hidden="!context.isActive">
-		<?php echo $content; ?>
+		<?php echo wp_kses_post($content); ?>
 	</div>
 </div>
