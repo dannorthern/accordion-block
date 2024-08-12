@@ -5,18 +5,26 @@
   /* Block Styles
   *******************************************************/
 }
+.accordion__item:focus-within {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: inherit;
+}
 .accordion__title {
   background: none;
   color: inherit;
   border: none;
   font: inherit;
   cursor: pointer;
-  outline: inherit;
+  outline: none;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   text-align: left;
+}
+.accordion__title:focus {
+  text-decoration: underline;
 }
 .accordion__title--text {
   padding-right: 2.25rem;
