@@ -33,17 +33,28 @@
 	"attributes": {
 		"title": {
 			"type": "string",
-			"default": "Tabs Headline Right Here"
+			"default": "Accordion Headline Goes Here"
 		},
 		"defaultState": {
 			"type": "boolean",
 			"default": false
+		},
+		"style": {
+            "type": "object",
+            "default": {
+                "color": {
+                    "text": "#000000",
+                    "background": "#ff9900"
+                },
+                "spacing": {
+                    "padding": {
+                        "top": "2rem",
+                        "bottom": "3rem"
+                    }
+                }
+            }
 		}
 	},
-	 "selectors": {
-        "root": ".accordion__item",
-        "typography": ".accordion__title"
-    },
     "textdomain": "builtnorth-accordion-block",
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",

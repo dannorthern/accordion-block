@@ -53,9 +53,7 @@
   transform: translate(50%, -75%) rotate(-45deg);
 }
 .accordion__content {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.25s ease;
+  margin-top: 0.5rem;
 }
 .accordion__item.is-active .accordion__content {
   height: auto;
